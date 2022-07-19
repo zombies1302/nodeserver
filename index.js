@@ -21,11 +21,11 @@ var db = mysql.createConnection({
      host: 'db-mysql-sgp1-91313-do-user-10243385-0.b.db.ondigitalocean.com',
      port:25060,
      user: 'khiem', 
-     password: 'AVNS_P4mQIkqol3qearMHAr3', 
+     password: 'AVNS_vx-gxDXY-xoRhw5bb4s', 
      database: 'knlv',
 
 }); 
-db.connect(() => console.log('Da ket noi database !'));
+db.connect((error) => console.log('Da ket noi database !',error));
 module.exports = db; 
 app.get("/", (req, res) => {
      res.send("Đây là trang chủ")
