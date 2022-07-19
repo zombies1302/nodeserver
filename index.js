@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 // const jwt = require('jsonwebtoken');
 var cors = require('cors')
 const app = exp();
-const port = 3000;
+const port = 8080;
 const http = require('http');
 const server = http.createServer(app);
  
