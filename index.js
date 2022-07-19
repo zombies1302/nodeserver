@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
 var mysql = require('mysql');
 var db = mysql.createConnection({
      host: 'db-mysql-sgp1-91313-do-user-10243385-0.b.db.ondigitalocean.com',
-     port = '25060',
+     port:25060,
      user: 'khiem', 
      password: 'AVNS_P4mQIkqol3qearMHAr3', 
      database: 'knlv',
