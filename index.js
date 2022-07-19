@@ -7,21 +7,22 @@ const app = exp();
 const port = 8080;
 const http = require('http');
 const server = http.createServer(app);
- 
+
 // const PRIVATE_KEY = fs.readFileSync('private-key.txt');
 app.use(bodyParser.json()); 
 // app.use(cors());
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+     res.header("Access-Control-Allow-Origin", "*");
+     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+     next();
 });
 var mysql = require('mysql');
 var db = mysql.createConnection({
-     host: 'localhost',
-     user: 'root', 
-     password: '', 
-     database: 'ksdn',
+     host: 'db-mysql-sgp1-91313-do-user-10243385-0.b.db.ondigitalocean.com',
+     port = '25060',
+     user: 'khiem', 
+     password: 'AVNS_P4mQIkqol3qearMHAr3', 
+     database: 'knlv',
 
 }); 
 db.connect(() => console.log('Da ket noi database !'));
