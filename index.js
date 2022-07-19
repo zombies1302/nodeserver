@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
 app.get('/api/loai', (req, res) => {
      // const email = req.params.id;
      // const password = req.body.password;
-     let sql = 'SELECT * FROM loai';
+     let sql = 'SELECT * FROM knlv.loai';
      db.query(sql, (err, rows) => { 
           res.status(200).json(rows)
           // console.log(err)
