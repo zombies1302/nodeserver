@@ -7,7 +7,11 @@ const app = exp();
 const port = 3000;
 const http = require('http');
 const server = http.createServer(app);
-
+const io = require("socket.io")(server, {
+     cors: {
+          origin: "*",
+     }
+}); 
 // const PRIVATE_KEY = fs.readFileSync('private-key.txt');
 app.use(bodyParser.json()); 
 // app.use(cors());
@@ -31,13 +35,14 @@ app.get("/", (req, res) => {
      res.send("Đây là trang chủ")
 });
 
-// io.on('connection', (socket) => {
-//      socket.on('phone', (sdt) => {
-//           io.emit('user',sdt)
+io.on('connection', (socket) => {
+     socket.on('phone', (sdt) => {
+          io.emit('user',sdt)
 
-//           console.log('phone: ' + sdt);
-//      });
-// });
+          console.log('phone: ' + sdt);
+     });
+});
+
 
 
 app.get('/api/loai', (req, res) => {
@@ -99,7 +104,7 @@ app.post('/api/loai', (req, res) => {
 })
 
 
-app.listen(process.env.PORT || 3000)
+server.listen(process.env.PORT || 3000)
 
 // app.listen(port, () =>{
 //      console.log(`Ung dung dang chay voi port ${port}`);
