@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 // const jwt = require('jsonwebtoken');
 var cors = require('cors')
 const app = exp();
-const port = 8080;
+const port = 80;
 const http = require('http');
 const server = http.createServer(app);
 
@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
 app.get('/api/loai', (req, res) => {
      // const email = req.params.id;
      // const password = req.body.password;
-     let sql = 'SELECT * FROM knlv.loai';
+     let sql = 'SELECT * FROM loai';
      db.query(sql, (err, rows) => { 
           res.status(200).json(rows)
           // console.log(err)
