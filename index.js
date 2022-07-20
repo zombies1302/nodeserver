@@ -99,8 +99,8 @@ app.post('/api/loai', (req, res) => {
 })
 
 
+app.listen(process.env.PORT || 3000)
 
-
-app.listen(port, () =>{
-     console.log(`Ung dung dang chay voi port ${port}`);
-});
+// app.listen(port, () =>{
+//      console.log(`Ung dung dang chay voi port ${port}`);
+// });
