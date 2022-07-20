@@ -22,11 +22,11 @@ app.use(function(req, res, next) {
 });
 var mysql = require('mysql');
 var db = mysql.createConnection({
-     host: '94.237.3.192',
-     port:3306,
-     user: 'ejhdmsyu_khiem', 
-     password: 'RU1nmaq-AA^N', 
-     database: 'ejhdmsyu_khiem',
+     host: 'db-mysql-sgp1-91313-do-user-10243385-0.b.db.ondigitalocean.com',
+     port:25060,
+     user: 'khiem', 
+     password: 'AVNS_vx-gxDXY-xoRhw5bb4s', 
+     database: 'knlv',
 
 }); 
 db.connect((error) => console.log('Da ket noi database !',error));
