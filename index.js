@@ -74,7 +74,6 @@ app.post('/api/sanpham', (req, res) => {
      let mota = req.body.mota;
      let maLoai = req.body.maLoai;
      let date = req.body.date;
-
      let data ={
           ten_san_pham:tensp,
           gia_nhap:gia_nhap,
@@ -86,6 +85,16 @@ app.post('/api/sanpham', (req, res) => {
      };  
      // const password = req.body.password;
      let sql = 'INSERT INTO san_pham SET ?';
+     db.query(sql,data, function(err, d) { 
+          res.json(d)
+          console.log(err)
+     }  ); 
+})
+app.post('/api/signup', (req, res) => {
+     const data = req.body
+     console.log(data)
+     // const password = req.body.password;
+     let sql = 'INSERT INTO users SET ?';
      db.query(sql,data, function(err, d) { 
           res.json(d)
           console.log(err)
